@@ -1,4 +1,4 @@
 module.exports = {
-  title: 'yarnTemplate',
-  repo: ''
+  title: 'AntJS',
+  repo: 'https://github.com/tannerstephens/ant-js'
 };
