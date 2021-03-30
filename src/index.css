@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+}
+
+#root {
+  position: absolute;
+  display: block;
+  z-index: -1;
+}
