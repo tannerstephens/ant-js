@@ -59,6 +59,13 @@ export class Ant extends Sprite {
     this.vx += (Math.random() - 0.5)*0.1;
     this.vy += (Math.random() - 0.5)*0.1;
 
+    if(Math.abs(this.vx) > 1) {
+      this.vx = 1*this.vx/Math.abs(this.vx);
+    }
+
+    if(Math.abs(this.vy) > 1) {
+      this.vy = 1*this.vy/Math.abs(this.vy);
+    }
 
     this.rotation = -Math.atan2(-this.vy, this.vx) + Math.PI/2;
 
@@ -82,7 +89,6 @@ export class Ant extends Sprite {
 
         this.pheromones.push(p);
 
-        console.log('new')
       } else {
         const back = this.pheromones.splice(0, 1)[0];
 

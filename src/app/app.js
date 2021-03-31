@@ -31,21 +31,14 @@ class App extends Application {
   generateAnts() {
     const { numAnts = 10, pheromoneAge = 10 } = this.options;
 
-    const pheromoneContainer = new ParticleContainer(numAnts*pheromoneAge/10, {
+    this.pheromoneContainer = new ParticleContainer(numAnts*pheromoneAge/10, {
       tint: true,
       position: true
     });
-    this.stage.addChild(pheromoneContainer);
+    this.stage.addChild(this.pheromoneContainer);
 
     return Array.from(new Array(numAnts)).map((_, i) => {
-      // const tint = i == 0 ? 0x00ff00 : 0x0080ff;
-      const tint = Math.random() * 0xffffff;
-
-      const ant = new Ant(this, pheromoneAge, pheromoneContainer, tint);
-
-      if(i==0){
-        ant.tint = 0x00ff00;
-      }
+      const ant = new Ant(this, pheromoneAge, this.pheromoneContainer);
 
       this.stage.addChild(ant);
 

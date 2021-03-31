@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const app = new App({
     width: innerWidth,
     height: innerHeight,
-    numAnts: 100,
+    numAnts: Math.floor(innerWidth*innerHeight/11656),
     pheromoneAge: 500,
   });
 
